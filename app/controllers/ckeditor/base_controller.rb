@@ -3,8 +3,8 @@ class Ckeditor::BaseController < ApplicationController
   layout "ckeditor"
   
   before_filter :set_locale
-  before_filter :find_asset, :only => [:destroy
-  before_filter :find_assetable    
+  before_filter :find_asset, :only => [:destroy]
+  before_filter :find_assetable
   before_filter :ckeditor_authenticate
   skip_filter :verify_authenticity_token
 
