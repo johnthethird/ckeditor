@@ -10,7 +10,6 @@ module Ckeditor
         end
         
         def ckeditor_before_create_asset(asset)
-          asset.assetable = current_user if respond_to?(:current_user)
           return true
         end
         
