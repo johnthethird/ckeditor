@@ -31,7 +31,7 @@ class Ckeditor::BaseController < ApplicationController
         render :text => body
       else
         Rails.logger.error "[Ckeditor] Error: #{asset.errors.full_messages}" rescue nil
-        render :text => %|<script type="text/javascript">alert("Error: #{asset.errors.full_messages}");</script>|
+        render :status => :unprocessable_entity, :json => asset.errors.full_messages.join(",")
       end
     end
 
